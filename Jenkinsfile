@@ -9,9 +9,11 @@ pipeline {
     stages {
         stage("test") {
             steps {
-                lib = load('lib.groovy')
+                script {
+                    lib = load('lib.groovy')
 
-                echo lib.hello('world')
+                    echo lib.hello('world')
+                }
             }
         }
     }
