@@ -29,6 +29,7 @@ pipeline {
             steps {
                 echo "$one, $two"
                 echo lib.hello(lib.name)
+                lib.runStep()
             }
         }
     }
