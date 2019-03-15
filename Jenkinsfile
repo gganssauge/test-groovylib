@@ -15,8 +15,8 @@ pipeline {
             steps {
                 script {
                     def l = load('lib.groovy')
-                    lib = l.instantiate()
-                    lib2 = l.instantiate()
+                    lib = l.instantiate(this)
+                    lib2 = l.instantiate(this)
 
                     echo lib.hello('world')
                     echo lib2.hello('cruel world')
