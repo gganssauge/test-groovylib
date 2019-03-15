@@ -27,9 +27,11 @@ pipeline {
 
         stage("execute") {
             steps {
-                echo "$one, $two"
-                echo lib.hello(lib.name)
-                lib.runStep()
+                script {
+                    echo "$one, $two"
+                    echo lib.hello(lib.name)
+                    lib.runStep()
+                }
             }
         }
     }
