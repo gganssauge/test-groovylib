@@ -1,6 +1,10 @@
 class Groovylib {
     def name
 
+    static Groovylib instantiate() {
+        return new Groovylib()
+    }
+
     def hello(String name) {
         this.name = name
         return "hello, $name"
@@ -15,4 +19,4 @@ class Groovylib {
     }
 }
 
-return new Groovylib()
+return this
