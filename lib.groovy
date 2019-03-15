@@ -1,9 +1,11 @@
-def hello(String name) {
-    return "hello, $name"
+class Groovylib {
+    def hello(String name) {
+        return "hello, $name"
+    }
+
+    def twoReturns() {
+        return [1, 2]
+    }
 }
 
-def twoReturns() {
-    return [1, 2]
-}
-
-return this
+return new Groovylib()
