@@ -1,5 +1,6 @@
 def one
 def two
+def lib
 
 pipeline {
     agent any
@@ -14,8 +15,10 @@ pipeline {
             steps {
                 script {
                     lib = load('lib.groovy')
+                    lib2 = load('lib.groovy')
 
                     echo lib.hello('world')
+                    echo lib2.hello('cruel world')
                     (one, two) = lib.twoReturns()
                 }
             }
@@ -24,6 +27,7 @@ pipeline {
         stage("execute") {
             steps {
                 echo "$one, $two"
+                echo lib.hello(lib.name)
             }
         }
     }
