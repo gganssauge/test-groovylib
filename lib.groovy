@@ -19,4 +19,4 @@ class Groovylib {
     }
 }
 
-return this
+return Groovylib
