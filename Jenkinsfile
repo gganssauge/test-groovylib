@@ -1,6 +1,4 @@
 pipeline {
-    agent { any }
-
     options {
         timestamps()
         buildDiscarder(logRotator(numToKeepStr: '5'))
@@ -8,9 +6,11 @@ pipeline {
 
     stages {
         stage("test") {
-            lib = load('lib.groovy')
+            steps {
+                lib = load('lib.groovy')
 
-            echo lib.hello('world')
+                echo lib.hello('world')
+            }
         }
     }
 }
